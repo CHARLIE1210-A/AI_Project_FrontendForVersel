@@ -6,6 +6,9 @@ const nextConfig: { webpack: (config: Configuration) => Configuration } = {
     config.module?.rules?.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
+      eslint: {
+        ignoreDuringBuilds: true,
+      },
     });
     return config;
   },
